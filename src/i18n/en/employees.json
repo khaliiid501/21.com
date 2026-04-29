@@ -1,0 +1,48 @@
+{
+  "title": "Employees",
+  "subtitle": "Manage your workforce",
+  "new": "New Employee",
+  "edit": "Edit Employee",
+  "fields": {
+    "employeeNumber": "Employee Number",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "department": "Department",
+    "position": "Position",
+    "manager": "Manager",
+    "branch": "Branch",
+    "hireDate": "Hire Date",
+    "employmentType": "Employment Type",
+    "status": "Status",
+    "nationalId": "National ID",
+    "dateOfBirth": "Date of Birth",
+    "gender": "Gender",
+    "maritalStatus": "Marital Status",
+    "address": "Address",
+    "salary": "Base Salary"
+  },
+  "employmentType": {
+    "full-time": "Full-time",
+    "part-time": "Part-time",
+    "contract": "Contract",
+    "intern": "Intern"
+  },
+  "status": {
+    "active": "Active",
+    "on-leave": "On Leave",
+    "terminated": "Terminated"
+  },
+  "gender": {
+    "male": "Male",
+    "female": "Female"
+  },
+  "marital": {
+    "single": "Single",
+    "married": "Married",
+    "divorced": "Divorced",
+    "widowed": "Widowed"
+  },
+  "noManager": "No manager"
+}

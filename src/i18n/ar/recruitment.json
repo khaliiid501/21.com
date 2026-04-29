@@ -1,0 +1,46 @@
+{
+  "title": "التوظيف",
+  "openings": "الوظائف الشاغرة",
+  "candidates": "المرشحون",
+  "interviews": "المقابلات",
+  "newOpening": "وظيفة شاغرة جديدة",
+  "newCandidate": "مرشح جديد",
+  "newInterview": "جدولة مقابلة",
+  "fields": {
+    "department": "القسم",
+    "position": "الوظيفة",
+    "requirements": "المتطلبات",
+    "postedAt": "تاريخ النشر",
+    "closedAt": "تاريخ الإغلاق",
+    "stage": "المرحلة",
+    "jobOpening": "الوظيفة الشاغرة",
+    "interviewer": "المُقابِل",
+    "scheduledAt": "موعد المقابلة",
+    "result": "النتيجة",
+    "notes": "الملاحظات",
+    "resumeUrl": "رابط السيرة الذاتية",
+    "appliedAt": "تاريخ التقديم"
+  },
+  "openingStatus": {
+    "open": "مفتوحة",
+    "closed": "مغلقة"
+  },
+  "stage": {
+    "applied": "تقدم",
+    "screening": "فحص",
+    "interview": "مقابلة",
+    "offer": "عرض",
+    "hired": "تم التعيين",
+    "rejected": "مرفوض"
+  },
+  "interviewType": {
+    "phone": "هاتفية",
+    "video": "مرئية",
+    "onsite": "حضورية"
+  },
+  "result": {
+    "pass": "ناجح",
+    "fail": "راسب",
+    "pending": "قيد الانتظار"
+  }
+}

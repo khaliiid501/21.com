@@ -1,0 +1,48 @@
+{
+  "title": "الموظفون",
+  "subtitle": "إدارة فريق العمل",
+  "new": "موظف جديد",
+  "edit": "تعديل الموظف",
+  "fields": {
+    "employeeNumber": "الرقم الوظيفي",
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "email": "البريد الإلكتروني",
+    "phone": "الهاتف",
+    "department": "القسم",
+    "position": "الوظيفة",
+    "manager": "المدير المباشر",
+    "branch": "الفرع",
+    "hireDate": "تاريخ التوظيف",
+    "employmentType": "نوع التوظيف",
+    "status": "الحالة",
+    "nationalId": "الهوية الوطنية",
+    "dateOfBirth": "تاريخ الميلاد",
+    "gender": "الجنس",
+    "maritalStatus": "الحالة الاجتماعية",
+    "address": "العنوان",
+    "salary": "الراتب الأساسي"
+  },
+  "employmentType": {
+    "full-time": "دوام كامل",
+    "part-time": "دوام جزئي",
+    "contract": "عقد",
+    "intern": "متدرب"
+  },
+  "status": {
+    "active": "نشط",
+    "on-leave": "في إجازة",
+    "terminated": "منتهي"
+  },
+  "gender": {
+    "male": "ذكر",
+    "female": "أنثى"
+  },
+  "marital": {
+    "single": "أعزب",
+    "married": "متزوج",
+    "divorced": "مطلق",
+    "widowed": "أرمل"
+  },
+  "noManager": "بدون مدير"
+}

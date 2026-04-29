@@ -1,0 +1,22 @@
+{
+  "title": "Training",
+  "courses": "Courses",
+  "enrollments": "Enrollments",
+  "newCourse": "New Course",
+  "newEnrollment": "New Enrollment",
+  "fields": {
+    "instructor": "Instructor",
+    "category": "Category",
+    "durationHours": "Duration (hours)",
+    "course": "Course",
+    "employee": "Employee",
+    "score": "Score",
+    "enrolledAt": "Enrolled",
+    "completedAt": "Completed"
+  },
+  "status": {
+    "enrolled": "Enrolled",
+    "in-progress": "In Progress",
+    "completed": "Completed"
+  }
+}

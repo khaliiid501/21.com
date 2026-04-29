@@ -1,0 +1,47 @@
+{
+  "title": "Payroll",
+  "periods": "Pay Periods",
+  "payslips": "Payslips",
+  "salaries": "Salaries",
+  "allowances": "Allowances",
+  "deductions": "Deductions",
+  "newPeriod": "New Period",
+  "newSalary": "New Salary",
+  "newAllowance": "New Allowance",
+  "newDeduction": "New Deduction",
+  "fields": {
+    "year": "Year",
+    "month": "Month",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "baseSalary": "Base Salary",
+    "currency": "Currency",
+    "effectiveFrom": "Effective From",
+    "type": "Type",
+    "isRecurring": "Recurring",
+    "gross": "Gross",
+    "net": "Net",
+    "totalAllowances": "Total Allowances",
+    "totalDeductions": "Total Deductions"
+  },
+  "periodStatus": {
+    "draft": "Draft",
+    "finalized": "Finalized",
+    "paid": "Paid"
+  },
+  "allowanceType": {
+    "housing": "Housing",
+    "transport": "Transport",
+    "other": "Other"
+  },
+  "deductionType": {
+    "tax": "Tax",
+    "insurance": "Insurance",
+    "loan": "Loan",
+    "other": "Other"
+  },
+  "generate": "Generate Payslips",
+  "finalize": "Finalize",
+  "markPaid": "Mark Paid",
+  "viewPayslip": "View Payslip"
+}

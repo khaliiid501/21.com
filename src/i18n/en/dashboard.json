@@ -1,0 +1,31 @@
+{
+  "title": "Dashboard",
+  "subtitle": "Live overview of your HR operations",
+  "kpi": {
+    "totalEmployees": "Total Employees",
+    "onLeaveToday": "On Leave Today",
+    "attendanceRate": "Attendance Rate",
+    "openPositions": "Open Positions",
+    "monthlyPayroll": "Monthly Payroll"
+  },
+  "charts": {
+    "headcountByDepartment": "Headcount by Department",
+    "attendanceTrend": "Attendance Trend (30 days)",
+    "leaveBreakdown": "Leave Types Breakdown",
+    "recruitmentFunnel": "Recruitment Funnel"
+  },
+  "attendance": {
+    "present": "Present",
+    "late": "Late",
+    "absent": "Absent",
+    "leave": "On Leave"
+  },
+  "stages": {
+    "applied": "Applied",
+    "screening": "Screening",
+    "interview": "Interview",
+    "offer": "Offer",
+    "hired": "Hired",
+    "rejected": "Rejected"
+  }
+}

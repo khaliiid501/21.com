@@ -1,0 +1,9 @@
+{
+  "title": "Holidays",
+  "subtitle": "Public holidays calendar",
+  "new": "New Holiday",
+  "edit": "Edit Holiday",
+  "fields": {
+    "isRecurring": "Recurs Annually"
+  }
+}

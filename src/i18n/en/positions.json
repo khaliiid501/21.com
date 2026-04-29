@@ -1,0 +1,18 @@
+{
+  "title": "Positions",
+  "subtitle": "Job titles and salary bands",
+  "new": "New Position",
+  "edit": "Edit Position",
+  "fields": {
+    "department": "Department",
+    "level": "Level",
+    "minSalary": "Min Salary",
+    "maxSalary": "Max Salary"
+  },
+  "level": {
+    "junior": "Junior",
+    "mid": "Mid",
+    "senior": "Senior",
+    "lead": "Lead"
+  }
+}

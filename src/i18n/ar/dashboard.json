@@ -1,0 +1,31 @@
+{
+  "title": "لوحة التحكم",
+  "subtitle": "نظرة شاملة لعمليات الموارد البشرية",
+  "kpi": {
+    "totalEmployees": "إجمالي الموظفين",
+    "onLeaveToday": "في إجازة اليوم",
+    "attendanceRate": "نسبة الحضور",
+    "openPositions": "الوظائف الشاغرة",
+    "monthlyPayroll": "إجمالي الرواتب الشهرية"
+  },
+  "charts": {
+    "headcountByDepartment": "عدد الموظفين حسب القسم",
+    "attendanceTrend": "اتجاه الحضور (30 يوماً)",
+    "leaveBreakdown": "توزيع أنواع الإجازات",
+    "recruitmentFunnel": "مسار التوظيف"
+  },
+  "attendance": {
+    "present": "حاضر",
+    "late": "متأخر",
+    "absent": "غائب",
+    "leave": "في إجازة"
+  },
+  "stages": {
+    "applied": "تقدم",
+    "screening": "فحص",
+    "interview": "مقابلة",
+    "offer": "عرض",
+    "hired": "تم التعيين",
+    "rejected": "مرفوض"
+  }
+}

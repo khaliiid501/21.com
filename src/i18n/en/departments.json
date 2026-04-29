@@ -1,0 +1,13 @@
+{
+  "title": "Departments",
+  "subtitle": "Organizational structure",
+  "new": "New Department",
+  "edit": "Edit Department",
+  "fields": {
+    "code": "Code",
+    "parent": "Parent Department",
+    "manager": "Manager",
+    "headcount": "Headcount"
+  },
+  "noParent": "Top-level"
+}

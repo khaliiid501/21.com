@@ -1,0 +1,47 @@
+{
+  "title": "الرواتب",
+  "periods": "فترات الرواتب",
+  "payslips": "كشوف الرواتب",
+  "salaries": "الرواتب",
+  "allowances": "البدلات",
+  "deductions": "الاستقطاعات",
+  "newPeriod": "فترة جديدة",
+  "newSalary": "راتب جديد",
+  "newAllowance": "بدل جديد",
+  "newDeduction": "استقطاع جديد",
+  "fields": {
+    "year": "السنة",
+    "month": "الشهر",
+    "startDate": "تاريخ البدء",
+    "endDate": "تاريخ الانتهاء",
+    "baseSalary": "الراتب الأساسي",
+    "currency": "العملة",
+    "effectiveFrom": "ساري من",
+    "type": "النوع",
+    "isRecurring": "متكرر",
+    "gross": "الإجمالي",
+    "net": "الصافي",
+    "totalAllowances": "إجمالي البدلات",
+    "totalDeductions": "إجمالي الاستقطاعات"
+  },
+  "periodStatus": {
+    "draft": "مسودة",
+    "finalized": "معتمد",
+    "paid": "مدفوع"
+  },
+  "allowanceType": {
+    "housing": "سكن",
+    "transport": "مواصلات",
+    "other": "أخرى"
+  },
+  "deductionType": {
+    "tax": "ضريبة",
+    "insurance": "تأمين",
+    "loan": "قرض",
+    "other": "أخرى"
+  },
+  "generate": "إنشاء كشوف الرواتب",
+  "finalize": "اعتماد",
+  "markPaid": "تأكيد الصرف",
+  "viewPayslip": "عرض كشف الراتب"
+}

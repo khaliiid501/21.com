@@ -1,0 +1,31 @@
+{
+  "title": "Leaves",
+  "requests": "Leave Requests",
+  "balances": "Leave Balances",
+  "types": "Leave Types",
+  "newRequest": "New Request",
+  "newType": "New Leave Type",
+  "fields": {
+    "employee": "Employee",
+    "leaveType": "Leave Type",
+    "fromDate": "From",
+    "toDate": "To",
+    "days": "Days",
+    "reason": "Reason",
+    "isPaid": "Paid",
+    "defaultDays": "Default Days",
+    "color": "Color",
+    "entitled": "Entitled",
+    "used": "Used",
+    "remaining": "Remaining",
+    "year": "Year"
+  },
+  "status": {
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "cancelled": "Cancelled"
+  },
+  "approve": "Approve",
+  "reject": "Reject"
+}

@@ -1,0 +1,18 @@
+{
+  "title": "الحضور",
+  "subtitle": "متابعة الحضور اليومي",
+  "today": "اليوم",
+  "history": "السجل",
+  "checkIn": "تسجيل الدخول",
+  "checkOut": "تسجيل الخروج",
+  "workedHours": "ساعات العمل",
+  "overtime": "ساعات إضافية",
+  "status": {
+    "present": "حاضر",
+    "absent": "غائب",
+    "late": "متأخر",
+    "leave": "في إجازة"
+  },
+  "markPresent": "تسجيل حضور",
+  "markAbsent": "تسجيل غياب"
+}

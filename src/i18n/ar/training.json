@@ -1,0 +1,22 @@
+{
+  "title": "التدريب",
+  "courses": "الدورات التدريبية",
+  "enrollments": "التسجيلات",
+  "newCourse": "دورة جديدة",
+  "newEnrollment": "تسجيل جديد",
+  "fields": {
+    "instructor": "المُدرب",
+    "category": "الفئة",
+    "durationHours": "المدة (ساعات)",
+    "course": "الدورة",
+    "employee": "الموظف",
+    "score": "الدرجة",
+    "enrolledAt": "تاريخ التسجيل",
+    "completedAt": "تاريخ الإكمال"
+  },
+  "status": {
+    "enrolled": "مُسجل",
+    "in-progress": "قيد التقدم",
+    "completed": "مكتمل"
+  }
+}

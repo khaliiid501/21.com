@@ -1,0 +1,20 @@
+{
+  "title": "Performance Reviews",
+  "subtitle": "Periodic performance evaluations",
+  "new": "New Review",
+  "edit": "Edit Review",
+  "fields": {
+    "employee": "Employee",
+    "reviewer": "Reviewer",
+    "period": "Period",
+    "rating": "Rating",
+    "strengths": "Strengths",
+    "improvements": "Areas to Improve",
+    "goals": "Goals"
+  },
+  "status": {
+    "draft": "Draft",
+    "submitted": "Submitted",
+    "finalized": "Finalized"
+  }
+}

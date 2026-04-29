@@ -1,0 +1,31 @@
+{
+  "title": "الإجازات",
+  "requests": "طلبات الإجازة",
+  "balances": "أرصدة الإجازات",
+  "types": "أنواع الإجازات",
+  "newRequest": "طلب جديد",
+  "newType": "نوع إجازة جديد",
+  "fields": {
+    "employee": "الموظف",
+    "leaveType": "نوع الإجازة",
+    "fromDate": "من",
+    "toDate": "إلى",
+    "days": "الأيام",
+    "reason": "السبب",
+    "isPaid": "مدفوعة",
+    "defaultDays": "الأيام الافتراضية",
+    "color": "اللون",
+    "entitled": "المستحق",
+    "used": "المستخدم",
+    "remaining": "المتبقي",
+    "year": "السنة"
+  },
+  "status": {
+    "pending": "قيد المراجعة",
+    "approved": "موافق عليها",
+    "rejected": "مرفوضة",
+    "cancelled": "ملغاة"
+  },
+  "approve": "موافقة",
+  "reject": "رفض"
+}

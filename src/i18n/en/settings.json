@@ -1,0 +1,14 @@
+{
+  "title": "Settings",
+  "subtitle": "Application preferences",
+  "appearance": "Appearance",
+  "appearanceDesc": "Toggle between light and dark themes",
+  "language": "Language",
+  "languageDesc": "Choose your preferred interface language",
+  "data": "Data Management",
+  "dataDesc": "Reset seed data or clear local storage",
+  "resetData": "Reset to seed data",
+  "clearData": "Clear all data",
+  "dataReset": "All data has been reset to seed values",
+  "dataCleared": "All local data has been cleared"
+}

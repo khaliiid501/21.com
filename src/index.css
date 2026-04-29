@@ -127,5 +127,9 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  }
+  html[lang='ar'] body {
+    font-family: 'Cairo', ui-sans-serif, system-ui, sans-serif;
   }
 }

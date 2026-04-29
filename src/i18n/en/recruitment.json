@@ -1,0 +1,46 @@
+{
+  "title": "Recruitment",
+  "openings": "Job Openings",
+  "candidates": "Candidates",
+  "interviews": "Interviews",
+  "newOpening": "New Job Opening",
+  "newCandidate": "New Candidate",
+  "newInterview": "Schedule Interview",
+  "fields": {
+    "department": "Department",
+    "position": "Position",
+    "requirements": "Requirements",
+    "postedAt": "Posted",
+    "closedAt": "Closed",
+    "stage": "Stage",
+    "jobOpening": "Job Opening",
+    "interviewer": "Interviewer",
+    "scheduledAt": "Scheduled",
+    "result": "Result",
+    "notes": "Notes",
+    "resumeUrl": "Resume URL",
+    "appliedAt": "Applied"
+  },
+  "openingStatus": {
+    "open": "Open",
+    "closed": "Closed"
+  },
+  "stage": {
+    "applied": "Applied",
+    "screening": "Screening",
+    "interview": "Interview",
+    "offer": "Offer",
+    "hired": "Hired",
+    "rejected": "Rejected"
+  },
+  "interviewType": {
+    "phone": "Phone",
+    "video": "Video",
+    "onsite": "On-site"
+  },
+  "result": {
+    "pass": "Pass",
+    "fail": "Fail",
+    "pending": "Pending"
+  }
+}

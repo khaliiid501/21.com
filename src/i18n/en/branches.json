@@ -1,0 +1,12 @@
+{
+  "title": "Branches",
+  "subtitle": "Office locations",
+  "new": "New Branch",
+  "edit": "Edit Branch",
+  "fields": {
+    "address": "Address",
+    "city": "City",
+    "country": "Country",
+    "phone": "Phone"
+  }
+}

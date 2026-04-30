@@ -93,6 +93,7 @@ Do not invent infrastructure that does not exist. The following are **not** set 
 - No environment variables — there is no `.env*` file and no usage of `import.meta.env` beyond Vite defaults.
 - No CI configuration checked in (no `.github/workflows`).
 - No formatter config (no Prettier). Follow the style already present in the files you edit.
+- **React Compiler is intentionally not enabled** in this Vite template (see `README.md`); do not turn it on without explicit direction.
 
 ## Git workflow
 

@@ -1,20 +1,37 @@
-import { Bell, Check, ChevronRight, Home, Settings, Star, Trash2 } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { Bell, Check, ChevronRight, Home, Moon, Settings, Star, Sun, Trash2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 
 function App() {
+  const [isDark, setIsDark] = useState(false)
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', isDark)
+  }, [isDark])
+
   return (
     <div className="min-h-screen bg-background p-8">
       <div className="max-w-3xl mx-auto space-y-10">
 
         {/* Header */}
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight text-foreground">
-            Component Showcase
-          </h1>
-          <p className="text-muted-foreground mt-1">
-            Demonstrating the integrated React component bundle with Tailwind CSS v4.
-          </p>
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight text-foreground">
+              Component Showcase
+            </h1>
+            <p className="text-muted-foreground mt-1">
+              Demonstrating the integrated React component bundle with Tailwind CSS v4.
+            </p>
+          </div>
+          <Button
+            variant="outline"
+            size="icon"
+            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            onClick={() => setIsDark((v) => !v)}
+          >
+            {isDark ? <Sun /> : <Moon />}
+          </Button>
         </div>
 
         <Separator />

@@ -20,9 +20,11 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
+import { CompareTable } from '@/components/dashboard/CompareTable'
 import { DistrictCard } from '@/components/dashboard/DistrictCard'
 import { DistrictDetail } from '@/components/dashboard/DistrictDetail'
 import { KpiCard } from '@/components/dashboard/KpiCard'
+import { MonteCarloChart } from '@/components/dashboard/MonteCarloChart'
 import { PortfolioBuilder } from '@/components/dashboard/PortfolioBuilder'
 import { RiskReturnScatter } from '@/components/dashboard/RiskReturnScatter'
 import { ThemeToggle } from '@/components/dashboard/ThemeToggle'
@@ -36,6 +38,14 @@ const ZONE_FILTERS: ZoneFilter[] = ['الكل', 'شمال', 'جنوب', 'شرق'
 function App() {
   const [zoneFilter, setZoneFilter] = useState<ZoneFilter>('الكل')
   const [selectedId, setSelectedId] = useState<string>('aqiq')
+  const [pinnedIds, setPinnedIds] = useState<string[]>(['aqiq', 'diriyah', 'qiddiya'])
+
+  const togglePin = (id: string) =>
+    setPinnedIds((prev) => {
+      if (prev.includes(id)) return prev.filter((value) => value !== id)
+      if (prev.length >= 4) return [...prev.slice(1), id]
+      return [...prev, id]
+    })
 
   const forecasts = useMemo(() => rankDistricts(RIYADH_DISTRICTS), [])
   const forecastMap = useMemo(
@@ -197,7 +207,9 @@ function App() {
                         district={district}
                         forecast={forecast}
                         selected={district.id === selectedId}
+                        pinned={pinnedIds.includes(district.id)}
                         onSelect={setSelectedId}
+                        onTogglePin={togglePin}
                       />
                     )
                   })}
@@ -332,7 +344,20 @@ function App() {
         <Separator />
 
         <section>
+          <CompareTable
+            pinnedIds={pinnedIds}
+            forecasts={forecasts}
+            districtMap={districtMap}
+            onUnpin={togglePin}
+            onClear={() => setPinnedIds([])}
+          />
+        </section>
+
+        <Separator />
+
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <DistrictDetail district={selectedDistrict} forecast={selectedForecast} />
+          <MonteCarloChart district={selectedDistrict} forecast={selectedForecast} />
         </section>
 
         <footer className="text-center text-xs text-muted-foreground pt-4 pb-2">

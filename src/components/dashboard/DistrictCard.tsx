@@ -1,4 +1,4 @@
-import { ArrowUpRight, Building2, MapPin, TrendingUp } from 'lucide-react'
+import { ArrowUpRight, Building2, MapPin, Pin, TrendingUp } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
@@ -13,7 +13,9 @@ type DistrictCardProps = {
   district: District
   forecast: Forecast
   selected?: boolean
+  pinned?: boolean
   onSelect: (id: string) => void
+  onTogglePin?: (id: string) => void
 }
 
 const SIGNAL_VARIANT: Record<Forecast['signal'], 'default' | 'success' | 'warning' | 'destructive' | 'secondary'> = {
@@ -24,7 +26,14 @@ const SIGNAL_VARIANT: Record<Forecast['signal'], 'default' | 'success' | 'warnin
   'بيع': 'destructive',
 }
 
-export function DistrictCard({ district, forecast, selected, onSelect }: DistrictCardProps) {
+export function DistrictCard({
+  district,
+  forecast,
+  selected,
+  pinned,
+  onSelect,
+  onTogglePin,
+}: DistrictCardProps) {
   const growthPositive = forecast.growthRate12m >= 0
   return (
     <Card
@@ -44,7 +53,28 @@ export function DistrictCard({ district, forecast, selected, onSelect }: Distric
             <h3 className="text-lg font-semibold mt-1">{district.nameAr}</h3>
             <p className="text-xs text-muted-foreground">{district.nameEn}</p>
           </div>
-          <Badge variant={SIGNAL_VARIANT[forecast.signal]}>{forecast.signal}</Badge>
+          <div className="flex items-center gap-1.5">
+            {onTogglePin ? (
+              <button
+                type="button"
+                onClick={(event) => {
+                  event.stopPropagation()
+                  onTogglePin(district.id)
+                }}
+                className={cn(
+                  'rounded-md p-1.5 transition-colors',
+                  pinned
+                    ? 'bg-indigo-500/15 text-indigo-600 dark:text-indigo-300'
+                    : 'text-muted-foreground hover:bg-muted',
+                )}
+                aria-label={pinned ? 'إلغاء التثبيت' : 'تثبيت للمقارنة'}
+                aria-pressed={pinned}
+              >
+                <Pin className="size-3.5" />
+              </button>
+            ) : null}
+            <Badge variant={SIGNAL_VARIANT[forecast.signal]}>{forecast.signal}</Badge>
+          </div>
         </div>
 
         <div className="flex items-end justify-between gap-3">

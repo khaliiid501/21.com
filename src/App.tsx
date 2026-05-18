@@ -23,6 +23,9 @@ import { Separator } from '@/components/ui/separator'
 import { DistrictCard } from '@/components/dashboard/DistrictCard'
 import { DistrictDetail } from '@/components/dashboard/DistrictDetail'
 import { KpiCard } from '@/components/dashboard/KpiCard'
+import { PortfolioBuilder } from '@/components/dashboard/PortfolioBuilder'
+import { RiskReturnScatter } from '@/components/dashboard/RiskReturnScatter'
+import { ThemeToggle } from '@/components/dashboard/ThemeToggle'
 import { RIYADH_DISTRICTS } from '@/lib/riyadh-data'
 import { formatPct, formatSAR, rankDistricts } from '@/lib/forecast'
 
@@ -102,6 +105,7 @@ function App() {
               </p>
             </div>
             <div className="flex items-center gap-2">
+              <ThemeToggle />
               <Button variant="outline" size="sm">
                 <RefreshCcw />
                 تحديث البيانات
@@ -306,6 +310,22 @@ function App() {
                 })}
               </CardContent>
             </Card>
+          </div>
+        </section>
+
+        <Separator />
+
+        <section className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+          <div className="lg:col-span-3">
+            <RiskReturnScatter
+              forecasts={forecasts}
+              districtMap={districtMap}
+              selectedId={selectedId}
+              onSelect={setSelectedId}
+            />
+          </div>
+          <div className="lg:col-span-2">
+            <PortfolioBuilder forecasts={forecasts} districtMap={districtMap} />
           </div>
         </section>
 

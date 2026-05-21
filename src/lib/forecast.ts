@@ -195,6 +195,40 @@ export function rankDistricts(districts: District[]): Forecast[] {
     .sort((a, b) => b.attractivenessScore - a.attractivenessScore)
 }
 
+export function simulateNextMonth(districts: District[]): District[] {
+  return districts.map((d) => {
+    const history = d.pricePerSqmHistory
+    const lastPrice = history[history.length - 1]
+    const prevPrice = history[history.length - 2] ?? lastPrice
+    const priceMomentum = (lastPrice - prevPrice) / prevPrice
+    const priceJitter = (Math.random() - 0.45) * 0.04
+    const nextPrice = Math.max(
+      1,
+      Math.round(lastPrice * (1 + priceMomentum + priceJitter)),
+    )
+
+    const inflow = d.capitalInflow
+    const lastInflow = inflow[inflow.length - 1]
+    const prevInflow = inflow[inflow.length - 2] ?? lastInflow
+    const inflowMomentum = (lastInflow - prevInflow) / prevInflow
+    const inflowJitter = (Math.random() - 0.45) * 0.08
+    const nextInflow = Math.max(
+      1,
+      Math.round(lastInflow * (1 + inflowMomentum + inflowJitter)),
+    )
+
+    return {
+      ...d,
+      pricePerSqmHistory: [...history, nextPrice],
+      capitalInflow: [...inflow, nextInflow],
+      megaProjects: d.megaProjects.map((p) => ({
+        ...p,
+        completion: Math.min(100, Math.round((p.completion + Math.random() * 1.5) * 10) / 10),
+      })),
+    }
+  })
+}
+
 export function formatSAR(value: number): string {
   return new Intl.NumberFormat('ar-SA', {
     style: 'currency',

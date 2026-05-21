@@ -24,7 +24,12 @@ import { DistrictCard } from '@/components/dashboard/DistrictCard'
 import { DistrictDetail } from '@/components/dashboard/DistrictDetail'
 import { KpiCard } from '@/components/dashboard/KpiCard'
 import { RIYADH_DISTRICTS } from '@/lib/riyadh-data'
-import { formatPct, formatSAR, rankDistricts } from '@/lib/forecast'
+import {
+  formatPct,
+  formatSAR,
+  rankDistricts,
+  simulateNextMonth,
+} from '@/lib/forecast'
 
 type ZoneFilter = 'الكل' | 'شمال' | 'جنوب' | 'شرق' | 'غرب' | 'وسط'
 
@@ -33,15 +38,25 @@ const ZONE_FILTERS: ZoneFilter[] = ['الكل', 'شمال', 'جنوب', 'شرق'
 function App() {
   const [zoneFilter, setZoneFilter] = useState<ZoneFilter>('الكل')
   const [selectedId, setSelectedId] = useState<string>('aqiq')
+  const [pendingDistricts, setPendingDistricts] =
+    useState(RIYADH_DISTRICTS)
+  const [activeDistricts, setActiveDistricts] =
+    useState(RIYADH_DISTRICTS)
+  const [isRunning, setIsRunning] = useState(false)
 
-  const forecasts = useMemo(() => rankDistricts(RIYADH_DISTRICTS), [])
+  const hasPendingData = pendingDistricts !== activeDistricts
+
+  const forecasts = useMemo(
+    () => rankDistricts(activeDistricts),
+    [activeDistricts],
+  )
   const forecastMap = useMemo(
     () => new Map(forecasts.map((f) => [f.districtId, f])),
     [forecasts],
   )
   const districtMap = useMemo(
-    () => new Map(RIYADH_DISTRICTS.map((d) => [d.id, d])),
-    [],
+    () => new Map(activeDistricts.map((d) => [d.id, d])),
+    [activeDistricts],
   )
 
   const filteredDistricts = useMemo(() => {
@@ -52,19 +67,19 @@ function App() {
     })
   }, [forecasts, districtMap, zoneFilter])
 
-  const selectedDistrict = districtMap.get(selectedId) ?? RIYADH_DISTRICTS[0]
+  const selectedDistrict = districtMap.get(selectedId) ?? activeDistricts[0]
   const selectedForecast = forecastMap.get(selectedDistrict.id) ?? forecasts[0]
 
   const aggregate = useMemo(() => {
-    const totalCapital = RIYADH_DISTRICTS.reduce(
+    const totalCapital = activeDistricts.reduce(
       (acc, d) => acc + (d.capitalInflow.at(-1) ?? 0),
       0,
     )
-    const totalProjects = RIYADH_DISTRICTS.reduce(
+    const totalProjects = activeDistricts.reduce(
       (acc, d) => acc + d.megaProjects.length,
       0,
     )
-    const totalBudget = RIYADH_DISTRICTS.reduce(
+    const totalBudget = activeDistricts.reduce(
       (acc, d) =>
         acc + d.megaProjects.reduce((s, p) => s + p.budgetBillionSAR, 0),
       0,
@@ -81,7 +96,19 @@ function App() {
       avgGrowth,
       topGrowth,
     }
-  }, [forecasts])
+  }, [activeDistricts, forecasts])
+
+  const handleRefreshData = () => {
+    setPendingDistricts((current) => simulateNextMonth(current))
+  }
+
+  const handleRunModel = () => {
+    setIsRunning(true)
+    window.setTimeout(() => {
+      setActiveDistricts(pendingDistricts)
+      setIsRunning(false)
+    }, 600)
+  }
 
   return (
     <div dir="rtl" className="min-h-screen bg-background">
@@ -102,13 +129,27 @@ function App() {
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm">
+              {hasPendingData ? (
+                <Badge variant="warning" className="hidden sm:inline-flex">
+                  بيانات جديدة جاهزة
+                </Badge>
+              ) : null}
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleRefreshData}
+                disabled={isRunning}
+              >
                 <RefreshCcw />
                 تحديث البيانات
               </Button>
-              <Button size="sm">
-                <LineChart />
-                تشغيل النموذج
+              <Button
+                size="sm"
+                onClick={handleRunModel}
+                disabled={isRunning || !hasPendingData}
+              >
+                <LineChart className={isRunning ? 'animate-spin' : undefined} />
+                {isRunning ? 'يشتغل النموذج…' : 'تشغيل النموذج'}
               </Button>
             </div>
           </div>
